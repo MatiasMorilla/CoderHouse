@@ -1,0 +1,17 @@
+.menu .menu-item{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #0b70d4;
+}
+
+.titulos{
+    background: #456;
+    color: #fff;
+}
+
+footer span{
+    display: block;
+}
