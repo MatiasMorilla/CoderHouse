@@ -11,3 +11,7 @@
     color: #5c80ca;
 }
 
+td, th, table{
+    border:1px solid #000;
+}
+
