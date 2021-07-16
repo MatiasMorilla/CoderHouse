@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link Estilos -->
+    <!-- Link Estilos Generales -->
     <link rel="stylesheet" href="css/styles.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
@@ -30,32 +30,39 @@
     </header>
 
     <!-- SLIDE -->
-    <div class="container-slide">
-        <div class="slider">
-            <div class="slider-item">
-                <h1>SLIDERS</h1>
-            </div>
+    <div class="container-slider">
+        <div class="slider" id="slider">       
+
+            <div class="slider-btn slider-btn-left" id="btn-left">&#60</div>
+            <div class="slider-btn slider-btn-right" id="btn-right">&#62</div>
         </div>
     </div>
 
-    <!-- MAIN -->
+     <!-- MAIN -->
     <main class="main">
         <div class="products-container" id="p">
-            <div class="card">
-                <h3 class="title">Nombre producto</h3>
-                <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, suscipit.</p>
-                <div class="footer-card">
-                    <button class="btn-card">Agregar</button>
-                    <span class="price-card">$15000</span>
-                </div>
-            </div>            
+
         </div>
-    </main> 
+    </main>  
    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="redes">
+            <a href="#"><i class="fas fa-envelope"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram-square"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="footer-brand">
+            <a href="#">LOGO</a>
+        </div>
+    </footer>
 
     <!-- Script Productos -->
     <script src="js/productos.js"></script>
     <!-- Script main -->
     <script src="js/main.js"></script>
+    <!-- Script Slider -->
+    <script src="js/slider.js"></script>
 </body>
 </html>

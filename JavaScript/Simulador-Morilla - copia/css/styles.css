@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;400&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body{
+    font-family: "Encode Sans SC";
+}
+
 .header{
     width: 100%;    
     height: 5em;
-    background: #a456aa;
+    background: rgba(189, 156, 84, 0.514);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -68,11 +73,62 @@
     cursor:pointer
 }
 
-.container-slide{
+.container-slider{
     width: 80%;
-    margin: 10px auto;
-    height: 20em;
-    border: 1px solid #000;
+    margin: 25px auto;
+    position: relative;
+    overflow: hidden;
+    /* border: 5px solid rgba(194, 193, 193, 0.192); */
+    box-shadow: 3px 3px 3px rgba(0,0,0, .2),
+                -3px -3px 3px rgba(0,0,0, .2);
+}
+
+.slider{
+    display: flex;
+    width: 1600%;
+    height: 25em;
+    margin-left: -100%;
+}
+
+.slider-item{
+    width: 100%;
+}
+
+.slider-item .slider-img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.slider-btn{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background: rgba(194, 193, 193, 0.192);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    font-family: monospace;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-btn:hover{
+    background: rgba(110, 110, 110, 0.295);
+}
+
+.slider-btn-left{
+    left: 10px;
+}
+
+.slider-btn-right{
+    right: 10px;
 }
 
 .main{
@@ -104,6 +160,10 @@
     align-items: center;
 }
 
+.card .img-card{
+    width: 140px;
+}
+
 .card .footer-card{
     width: 100%;
     display: flex;
@@ -127,4 +187,43 @@
     font-size: 18px;
     margin-right: 5px;
     margin-bottom: 5px;
+}
+
+.footer{
+    width: 100%;
+    height: 14em;
+    margin-top: 5em;
+    padding-top: 3em;
+    background: rgba(189, 156, 84, 0.514);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .redes{
+    width: 30%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #000;
+    padding: 5px;
+    font-size: 35px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.footer .footer-brand{
+    width: 100%;
+    height: 2em;
+    background: rgba(204, 177, 119, 0.514);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
 }
