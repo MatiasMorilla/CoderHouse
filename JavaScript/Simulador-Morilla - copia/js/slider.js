@@ -57,3 +57,6 @@ btn_left.addEventListener("click", function(){
 setTimeout(function(){
     next();
 }, 5000);
+
+
+
