@@ -20,17 +20,25 @@
         </div>
         <form action="" class="form-search">
             <input type="search" class="search" placeholder="Busca tu producto aqui...">
-            <button class="btn-search">Buscar</button>
+            <button class="btn btn-search">Buscar</button>
         </form>
         <div class="cart-container">
-            <button class="cart">
+            <button class="cart" id="btn-cart">
                 <i class="fas fa-shopping-cart"></i>
             </button>
         </div>
     </header>
 
-    <!-- SLIDE -->
-    <div class="container-slider">
+    <!-- CARRITO -->
+    <div class="cart-container-product cart-hidden">    
+        <div class="buy-container">
+            <span class="total-price">Total:</span>
+            <button class="btn btn-buy">Comprar</button>
+        </div>
+    </div>
+
+   <!-- SLIDE -->
+   <div class="container-slider">
         <div class="slider" id="slider">       
 
             <div class="slider-btn slider-btn-left" id="btn-left">&#60</div>
@@ -38,7 +46,7 @@
         </div>
     </div>
 
-     <!-- MAIN -->
+    <!-- MAIN -->
     <main class="main">
         <div class="products-container" id="p">
 
@@ -57,6 +65,7 @@
             <a href="#">LOGO</a>
         </div>
     </footer>
+    
 
     <!-- Script Productos -->
     <script src="js/productos.js"></script>
