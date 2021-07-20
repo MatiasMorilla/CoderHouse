@@ -102,14 +102,12 @@ class Cart
 
 const cart = new Cart();
 
-
 const btn_cart = document.querySelector("#btn-cart");
 const cart_container = document.querySelector(".cart-container-product");
 const carrito = document.querySelector(".cart");
 const cart_items = document.querySelectorAll(".product");
 const card = document.querySelectorAll(".card");
 const btn_card = document.querySelectorAll(".btn-card");
-var btn_cancel = document.querySelectorAll(".btn-cancel");
 
 
 const cartToHTML = function(cart)
@@ -123,35 +121,28 @@ const cartToHTML = function(cart)
     }
 }
 
-const deleteToCart = function(cart)
+const deleteToCart = function(cart, id)
 {
-    console.log(btn_cancel);
-    btn_cancel.forEach(function(e)
+    let cart_items = document.querySelectorAll(".product");
+    let btn_cart = document.querySelector("#btn-cart");
+
+    let p = buscarXid(id);
+    cart.delete(p);
+    cartToHTML(cart);
+
+    //ENUMERO LOS PRODUCTOS CON EL ATRIBUTO CANT
+    cart_items = document.querySelectorAll(".product");
+
+    if(cart_items.length > 0)
     {
-        e.addEventListener("click", function()
-        {
-            console.log(e);
-            let cart_items = document.querySelectorAll(".product");
-            let btn_cart = document.querySelector("#btn-cart");
+        btn_cart.classList.add("cant");
+        btn_cart.setAttribute("cant", cart_items.length);
+    }
 
-            let p = buscarXid(e.getAttribute("idProducto"));
-            cart.delete(p);
-            cartToHTML(cart);
+    // MODIFICO EL TOTAL DE LA COMPRA
+    let total_price = document.querySelector(".total-price");
+    total_price.innerHTML ="Total: $" + cart.calculateTotal();
 
-            //ENUMERO LOS PRODUCTOS CON EL ATRIBUTO CANT
-            cart_items = document.querySelectorAll(".product");
-
-            if(cart_items.length > 0)
-            {
-                btn_cart.classList.add("cant");
-                btn_cart.setAttribute("cant", cart_items.length);
-            }
-
-            // MODIFICO EL TOTAL DE LA COMPRA
-            let total_price = document.querySelector(".total-price");
-            total_price.innerHTML ="Total: $" + cart.calculateTotal();
-        })
-    })
 }
 
 
@@ -187,9 +178,6 @@ btn_card.forEach(function(e)
         // MODIFICO EL TOTAL DE LA COMPRA
         let total_price = document.querySelector(".total-price");
         total_price.innerHTML ="Total: $" + cart.calculateTotal();
-
-        btn_cancel = document.querySelectorAll(".btn-cancel");
-        deleteToCart(cart);// FALTA HACER QUE SE ACTUALICE!!
     })
 })
 
