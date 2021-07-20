@@ -1,67 +1,35 @@
 
+const header = document.querySelector(".header"); // obtengo el header
+const btn_right = document.querySelector("#btn-right"); // obtengo el bonton derecho
+const btn_left = document.querySelector("#btn-left");// obtengo el bonton izquierdo
 
-/* // agrega u producto al carrito
-function addToCart(nombre)
+window.onscroll = function()
 {
-    for(let i = 0; i < arrayP.length; i++)
+    let y = window.scrollY;
+    if(y >= 1)
     {
-        if(nombre == arrayP[i].nombre)
-        {
-            let product = document.createElement("div");
-            product.className = "product";
-            product.innerHTML = 
-            `<div class="img-product">
-            <img src="`+ arrayP[i].img +`" alt="`+ arrayP[i].nombre +`">
-            </div>
-            <div class="info-product">
-            <h4 class="name">`+ arrayP[i].nombre +`</h4>
-            <span class="price">$`+ arrayP[i].precio +`</span>
-            </div>
-            <div class="cant-product">
-            <span class="cant">`+ 1 +`</span>
-            </div>
-            <div class="cancel-container">
-            <button class="btn-cancel" idProducto="`+ arrayP[i].id +`"><i class="far fa-times-circle"></i></button>
-            </div>`
-            
-            cart_container.appendChild(product);
-        }
+        header.classList.add("header--fixed");
     }
-} */
-
-/* function deleteProduct(nombre)
-{
-    let cart_container = document.querySelector(".cart-container-product");
-
-    for(let i = 0; i < arrayP.length; i++)
+    else
     {
-        if(nombre == arrayP[i].nombre)
-        {
-            let cant = cart_container.childNodes;
-            cart_container.removeChild(cant[i + 3]);
-        }
+        header.classList.remove("header--fixed");
     }
-} */
+}
 
 
+crearYcargarSlide();
+crearYagregarCards();
 
-// Si se hace click en algun boton de "Agregar" se agrega el producto al carrito, se suma el total de la compra y se enumeran los elementos en el carrtio
 
+btn_right.addEventListener("click", function(){
+    next();
+})
 
-/* function buscarBtnCancel()
-{
-    let btn_cancel = document.querySelectorAll(".btn-cancel");
-    let i = 0;
+btn_left.addEventListener("click", function(){
+    prev();
+})
 
-    btn_cancel.forEach(function(e){
-        i++;
-
-        e.addEventListener("click", function(){
-            let p = buscarXid(e.getAttribute("idProducto"));
-            deleteProduct(p.nombre);
-            return 0;
-        })
-    })
-
-} */
+setInterval(function(){
+    next();
+}, 5000);
 

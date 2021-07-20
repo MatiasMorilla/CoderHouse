@@ -95,8 +95,6 @@ function buscarXid(id)
     return product;
 }
 
-crearYcargarSlide();
-crearYagregarCards();
 
 
 
