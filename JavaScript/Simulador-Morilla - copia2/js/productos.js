@@ -2,10 +2,10 @@ class Productos
 {
     constructor(id, nombre, stock, precio, img)
     {
-        this.id = id;
+        this.id = parseInt(id);
         this.nombre = nombre;
-        this.stock = stock;
-        this.precio = precio;
+        this.stock = parseInt(stock);
+        this.precio = parseFloat(precio);
         this.img = img;
     }
 
