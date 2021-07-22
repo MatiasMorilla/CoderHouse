@@ -1,17 +1,37 @@
-/**{ Efecto a aplicar
+*{ 
     padding: 0;
     margin: 0;
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-}*/
+}
 
 
 .first-letter{
     color: #5c80ca;
 }
 
-td, th, table{
-    border:1px solid #000;
+.header{
+    width: 100%;
+    position: fixed;
 }
 
+.header__brand,
+.header__nav,
+.nav__menu__item{
+    display: inline-block;
+}
+
+.main-container{
+    width: 100%;
+    height: 80vh;
+    background: #ccc;
+    text-align: center;
+}
+
+.footer{
+    width: 100%;
+    height: 3em;
+    background: #ccc;
+    text-align: center;
+}
