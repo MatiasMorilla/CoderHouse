@@ -2,8 +2,6 @@ const slider_container = document.querySelector("#slider"); // Obtengo el conten
 let slider_items = document.querySelectorAll(".slider-item"); // obtengo una lista de los slider items
 let last_slider = slider_items[slider_items.length-1]; // obtengo el ultimo slide
 
-// a traves de este metodo posisiono el ultimo slide en la primera posision
-slider_container.insertAdjacentElement("afterbegin", last_slider); 
 
 /**
  * Obtengo el primer slide
@@ -41,6 +39,22 @@ function prev()
         slider_container.insertAdjacentElement("afterbegin", last_slider);
         slider_container.style.marginLeft = "-100%";
     }, 500);
+}
+
+function crearYcargarSlide()
+{
+    let slider = document.querySelector(".slider");
+
+    for(let i = 0; i < arrayP.length; i++)
+    {
+        let slide = document.createElement("div");
+        slide.className = "slider-item";
+
+        arrayP[i].innerHTML =`<img src="`+ arrayP[i].img +`" alt="`+ arrayP[i].nombre +`" class="slider-img">`;    
+        slide.innerHTML = arrayP[i].innerHTML;
+        
+        slider.appendChild(slide);
+    }
 }
 
 

@@ -93,6 +93,9 @@ class Cart
             <button class="btn-cancel" idProducto="`+ this.products[i].id +`"><i class="far fa-times-circle"></i></button>
             </div>`
 
+            const id = this.products[i].id;
+            div.querySelector(".btn-cancel").addEventListener("click", addDeleteEvent)
+
             divArray.push(div);
         }
 
@@ -120,32 +123,6 @@ const cartToHTML = function(cart)
         carrito.appendChild(div);
     }
 }
-
-const deleteToCart = function(cart, id)
-{
-    let cart_items = document.querySelectorAll(".product");
-    let btn_cart = document.querySelector("#btn-cart");
-
-    let p = buscarXid(id);
-    cart.delete(p);
-    cartToHTML(cart);
-
-    //ENUMERO LOS PRODUCTOS CON EL ATRIBUTO CANT
-    cart_items = document.querySelectorAll(".product");
-
-    if(cart_items.length > 0)
-    {
-        btn_cart.classList.add("cant");
-        btn_cart.setAttribute("cant", cart_items.length);
-    }
-
-    // MODIFICO EL TOTAL DE LA COMPRA
-    let total_price = document.querySelector(".total-price");
-    total_price.innerHTML ="Total: $" + cart.calculateTotal();
-
-}
-
-
 
 // oculta o hace aparecer el carrito
 btn_cart.addEventListener("click", function(){
@@ -178,9 +155,39 @@ btn_card.forEach(function(e)
         // MODIFICO EL TOTAL DE LA COMPRA
         let total_price = document.querySelector(".total-price");
         total_price.innerHTML ="Total: $" + cart.calculateTotal();
+
     })
 })
 
+// Elimina un producto del carrito y actualiza los datos
+const addDeleteEvent = function(e)
+{
+    let btn = e.target;
+    btn.closest(".product").remove();
+
+    let cart_items = document.querySelectorAll(".product");
+    let btn_cart = document.querySelector("#btn-cart");
+
+    let p = buscarXid(btn.closest(".btn-cancel").getAttribute("idProducto"));
+    cart.delete(p);
+
+    //ENUMERO LOS PRODUCTOS CON EL ATRIBUTO CANT
+    cart_items = document.querySelectorAll(".product");
+
+    if(cart_items.length > 0)
+    {
+        btn_cart.classList.add("cant");
+        btn_cart.setAttribute("cant", cart_items.length);
+    }
+    else
+    {
+        btn_cart.classList.remove("cant");
+    }
+
+    // MODIFICO EL TOTAL DE LA COMPRA
+    let total_price = document.querySelector(".total-price");
+    total_price.innerHTML ="Total: $" + cart.calculateTotal();    
+}
 
 
 
