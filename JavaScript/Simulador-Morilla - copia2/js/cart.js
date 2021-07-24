@@ -156,8 +156,20 @@ btn_card.forEach(function(e)
         let total_price = document.querySelector(".total-price");
         total_price.innerHTML ="Total: $" + cart.calculateTotal();
 
+        mostrarMensaje();
     })
 })
+
+const mostrarMensaje = function()
+{
+    let msj = document.querySelector(".mensaje-container");
+    msj.classList.add("aparecer");
+
+    setTimeout(function(){
+        msj.classList.remove("aparecer")
+    }, 1500);
+}
+
 
 // Elimina un producto del carrito y actualiza los datos
 const addDeleteEvent = function(e)
@@ -170,6 +182,7 @@ const addDeleteEvent = function(e)
 
     let p = buscarXid(btn.closest(".btn-cancel").getAttribute("idProducto"));
     cart.delete(p);
+    cartToHTML(cart);
 
     //ENUMERO LOS PRODUCTOS CON EL ATRIBUTO CANT
     cart_items = document.querySelectorAll(".product");
