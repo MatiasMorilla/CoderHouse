@@ -1,12 +1,13 @@
 class Productos
 {
-    constructor(id, nombre, stock, precio, img)
+    constructor(id, nombre, stock, precio, img, info)
     {
         this.id = id;
         this.nombre = nombre;
         this.stock = stock;
         this.precio = precio;
         this.img = img;
+        this.info = info;
     }
 
     restarStock()
