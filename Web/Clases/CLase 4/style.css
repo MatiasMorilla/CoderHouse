@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.cont{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja{
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+    text-align: center;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.caja1{
+   order: 2;
+   background: #f00;
+}
+
+.caja2{
+    order: 3;
+    background: #0f0;
+}
+
+.caja3{
+    order: 1;
+    background: #00f;
+}
+
+.caja4{
+    order: 4;
+    background: #f0f;
+}
+
+.msj{
+    width: 300px;
+    padding: 10px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: 1px solid #000;
+    transform: translateX(110%);
+    transition: all .5s ease;
+}
+
+.aparecer{
+    transform: translateX(0);
+    transition: all .5s ease;
+}
+
+.aparecer::after{
+    content: attr(numero);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

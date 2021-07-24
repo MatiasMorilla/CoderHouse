@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="cont">
+        <div class="caja caja1" numero="1">1</div>
+        <div class="caja caja2" numero="2">2</div>
+        <div class="caja caja3" numero="3">3</div>
+        <div class="caja caja4" numero="4">4</div>
+    </div>
+
+    <div class="msj" >
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt velit adipisci modi, sunt error ipsum tempora necessitatibus in deleniti molestias!</p>
+    </div>
+
+    <script>
+        const msj = document.querySelector(".msj");
+        const cajas = document.querySelectorAll(".caja");
+
+
+        cajas.forEach(function(e)
+        {
+            e.addEventListener("click", function(){
+                msj.setAttribute("numero", e.getAttribute("numero"));
+                msj.classList.add("aparecer");
+                mostrar();
+            })
+        })
+
+        const mostrar = function()
+        {
+            if(msj.classList[1] == "aparecer")
+            {
+                setTimeout(function(){
+                    msj.classList.remove("aparecer");
+                },2000);
+            }
+        }
+    </script>
+</body>
+</html>
