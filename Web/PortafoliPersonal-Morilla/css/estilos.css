@@ -11,27 +11,142 @@
     color: #5c80ca;
 }
 
+/**************************************************************
+ HEADER
+**************************************************************/
+
 .header{
     width: 100%;
+    height: 5vh;
     position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.625rem;
+    color: #fff;
 }
 
-.header__brand,
-.header__nav,
-.nav__menu__item{
-    display: inline-block;
+.header__brand{
+    padding: 0.9375rem;
+    font-size: 22px;
 }
+
+.header__nav{
+    width: 40vw;
+    height: 100%;
+    padding: 0px 0.625rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__menu__item{
+    padding: 0.9375rem;
+    transition: all .5s ease;
+}
+
+.nav__menu__item:hover{
+    background: #ccc;
+}
+
+.nav__menu__item a{
+    color: #fff;
+}
+
+/**************************************************************
+ MAIN
+**************************************************************/
 
 .main-container{
     width: 100%;
     height: 80vh;
-    background: #ccc;
-    text-align: center;
+    background: #989898;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
 }
+
+
+/**************************************************************
+ FOOTER
+**************************************************************/
 
 .footer{
     width: 100%;
-    height: 3em;
+    height: 6vh;
     background: #ccc;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__redes{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer__redes a{
+    color: #fff;
+    font-size: 25px;
+    padding: 15px;
+}
+
+.footer__redes a:hover{
+    color: #5c80ca;
+    transition: .3s ease-in;
+}
+
+/**************************************************************
+SOBRE MI
+**************************************************************/
+
+.main-sobreMi{
+    width: 70%;
+    margin: 1.25rem auto;
+    display: flex;
+    background: #ccc;
+}
+
+.sobreMi{
+    width: 80%;
+    padding: 0.625rem;
+    display: flex;
+}
+
+.sobreMi__img{
+    
+}
+
+.sobreMi__info{
+    height: 60%;
+    padding: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.tecnologias{
+    display: flex;
+}
+
+.tecnologias__info{
+    width: 50%;
+    height: 60%;
+    padding: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
