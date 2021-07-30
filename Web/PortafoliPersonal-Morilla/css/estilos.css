@@ -4,8 +4,8 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+    scroll-behavior: smooth
 }
-
 
 .first-letter{
     color: #5c80ca;
@@ -17,13 +17,13 @@
 
 .header{
     width: 100%;
-    height: 5vh;
+    height: 3rem;
     position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.625rem;
-    color: #fff;
+    background: #989898;
 }
 
 .header__brand{
@@ -49,7 +49,7 @@
 }
 
 .nav__menu__item{
-    padding: 0.9375rem;
+    padding: 0.9rem;
     transition: all .5s ease;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .nav__menu__item a{
-    color: #fff;
+    color: #000;
 }
 
 /**************************************************************
@@ -110,6 +110,14 @@
 }
 
 /**************************************************************
+SECTION
+**************************************************************/
+
+section{
+    margin: 100px 0;
+}
+
+/**************************************************************
 SOBRE MI
 **************************************************************/
 
@@ -117,7 +125,6 @@ SOBRE MI
     width: 70%;
     margin: 1.25rem auto;
     display: flex;
-    background: #ccc;
 }
 
 .sobreMi{
@@ -131,22 +138,41 @@ SOBRE MI
 }
 
 .sobreMi__info{
-    height: 60%;
     padding: 0.625rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 }
 
 .tecnologias{
+    padding: 0.625rem;
     display: flex;
 }
 
 .tecnologias__info{
     width: 50%;
-    height: 60%;
     padding: 0.625rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+}
+
+.sobreMi__info p,
+.tecnologias__info p{
+    margin-top: 15px;
+}
+
+.tecnologias__lenguajes{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    padding: 5px;
+    border: 1px solid #000;
+}
+
+.tecnologias__lenguajes span{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
 }
