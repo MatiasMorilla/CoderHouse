@@ -17,6 +17,7 @@
 
 body{
     font-family: "Encode Sans SC";
+    overflow-x: hidden;
 }
 
 
@@ -64,6 +65,11 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.search input[type="reset"]
+{
+    background: #000;
 }
 
 .form-search .search{
@@ -130,11 +136,10 @@ body{
     flex-direction: column;
     z-index: 99;
     box-shadow: -4px 0px 15px rgba(0,0,0, .2);
-    transition: all .5s;
+    transition: all .35s;
 }
 
 .cart-hidden{
-    display: none;
     transform: translateX(100%);
 }
 
