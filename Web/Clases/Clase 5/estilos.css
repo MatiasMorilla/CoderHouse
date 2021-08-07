@@ -1,0 +1,43 @@
+body{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.caja{
+    width: 150px;
+    height: 150px;
+    background: #000;
+    animation-name: mover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes mover {
+    0%{
+        transform: translateY(0%);
+        background: #f00;
+    }
+
+    25%{
+        transform: translateY(100%);
+        background: #0f0;
+    }
+
+    50%{
+        transform: translateY(150%);
+        background: #00f;
+    }
+
+    75%{
+        transform: translateY(200%);
+        background: #0ff;
+    }
+
+    100%{
+        transform: translateY(250%);
+        background: #ff0;
+    }
+}
