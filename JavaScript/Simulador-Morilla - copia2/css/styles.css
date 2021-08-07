@@ -67,6 +67,11 @@ body{
     align-items: center;
 }
 
+.search input[type="reset"]
+{
+    background: #000;
+}
+
 .form-search .search{
     width: 80%;
     height: 2.5em;
@@ -131,11 +136,15 @@ body{
     flex-direction: column;
     z-index: 99;
     box-shadow: -4px 0px 15px rgba(0,0,0, .2);
-    transition: all .5s;
+    transition: all .35s;
 }
 
 .cart-hidden{
+<<<<<<< HEAD
     transform: translateX(110%);
+=======
+    transform: translateX(100%);
+>>>>>>> test2
 }
 
 .cart{
