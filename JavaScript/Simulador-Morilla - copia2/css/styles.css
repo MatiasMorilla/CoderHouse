@@ -140,11 +140,7 @@ body{
 }
 
 .cart-hidden{
-<<<<<<< HEAD
     transform: translateX(110%);
-=======
-    transform: translateX(100%);
->>>>>>> test2
 }
 
 .cart{
