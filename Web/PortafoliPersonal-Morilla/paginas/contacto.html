@@ -13,21 +13,19 @@
 <body>
     
     <!-- FORM CONTACT -->
-    <form action="" class="form">
-        <input type="text" class="nombre" placeholder="Ingrese su nombre">
-        <br>
-        <br>
-        <input type="email" class="email" placeholder="Ingrese su email">
-        <br>
-        <br>
-        <input type="text" class="subject" placeholder="Asunto">
-        <br>
-        <br>
-        <input type="text" class="info" placeholder="Ingrese mas informacion">
-        <br>
-        <br>
-        <input type="submit" class="btn" value="Enviar">
-    </form>
+    <section class="contacto">
+        <form action="" class="form">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" class="nombre" placeholder="Ingrese su nombre" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" class="email" placeholder="Ingrese su email" required>
+            <label for="asunto">Asunto</label>
+            <input type="text" name="asunto" class="asunto" placeholder="Ingrese el asunto" required>
+            <label for="informacion">Informacion</label>
+            <textarea name="informacion" id="" class="info" cols="39" rows="5" placeholder="Ingrese mas informacion" required maxlength="300"></textarea>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
 
 </body>
 </html>
