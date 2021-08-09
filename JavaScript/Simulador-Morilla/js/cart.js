@@ -70,3 +70,13 @@ class Cart
         return total;
     }
 }
+
+
+const btn_cart = document.querySelector("#btn-cart");
+const cart_container = document.querySelector(".cart-container-product");
+
+// oculta o hace aparecer el carrito
+btn_cart.addEventListener("click", function(){
+    cart_container.classList.toggle("cart-hidden");
+    
+})

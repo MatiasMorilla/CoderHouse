@@ -1,13 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;400&display=swap');
+/* VARIABLES */
+:root{
+    --color_principal : rgba(189, 156, 84, 0.514);
+    --color_secundario : rgba(204, 177, 119, 0.514);
+}
+
+/******************************************************************************
+ ESTILOS GENERALES
+******************************************************************************/
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.header{
+body{
+    font-family: "Encode Sans SC";
+    overflow-x: hidden;
+}
+
+
+/******************************************************************************
+ HEADER
+******************************************************************************/
+
+.header--fixed{
+    position: fixed;
+    background: rgba(189, 156, 84);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    transition: all .5s;
+}
+
+
+.nav{
     width: 100%;    
     height: 5em;
-    background: #a456aa;
+    background: var(--color_principal);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -35,6 +67,11 @@
     align-items: center;
 }
 
+.search input[type="reset"]
+{
+    background: #000;
+}
+
 .form-search .search{
     width: 80%;
     height: 2.5em;
@@ -47,7 +84,6 @@
 .form-search .btn-search{
     width: 5em;
     height: 2.5em;
-    border-radius: 2px;
     border: none;
     outline: none;
     cursor:pointer
@@ -56,24 +92,250 @@
 .cart-container{
     width: 5em;
     height: 2.2em;
+    position: relative;
 }
 
-.cart-container .cart{
+.cart-container .btn-cart{
     width: 100%;
     height: 100%;
     font-size: 30px;
     background: transparent;
     border: none;
     outline: none;
-    cursor:pointer
+    cursor:pointer;
 }
 
-.container-slide{
-    width: 80%;
-    margin: 10px auto;
-    height: 20em;
-    border: 1px solid #000;
+.cart-container .cant::after{
+    content: attr(cant);
+    font-size: 12px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+/******************************************************************************
+ ESTILOS DEL CARRITO
+******************************************************************************/
+
+.cart-container-product{
+    width: 25em;
+    height: 90%;
+    background: #fff;
+    position: fixed;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    box-shadow: -4px 0px 15px rgba(0,0,0, .2);
+    transition: all .35s;
+}
+
+.cart-hidden{
+    transform: translateX(110%);
+}
+
+.cart{
+    max-height: 85%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.cart .product{
+    width: 100%;
+    height: 6em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.product::after{
+    content: "";
+    width: 90%;
+    height: 1px;
+    background: #ccc;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+}
+
+.img-product img{
+    width: 60px;
+}
+
+.info-product{
+    width: 50%;
+    height: 80%;
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cant-product{
+    width: 10%;
+    font-size: 18px;
+}
+
+.cancel-container{
+    width: 15%;
+}
+
+.cancel-container .btn-cancel{
+    font-size: 20px;
+    background: none;
+    color: #000;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.buy-container{
+    width: 100%;
+    height: 5em;
+    background: var(--color_principal);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.25rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.buy-container .total-price{
+    font-weight: bold;
+}
+
+.buy-container .btn-buy{
+    width: 5rem;
+    height: 1.875rem;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/******************************************************************************
+ ESTILOS DEL MENSAJE DEL CARRITO
+******************************************************************************/
+
+.mensaje-container{
+    width: 17em;
+    height: 6em;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0, .2),
+                -2px -2px 5px rgba(0,0,0, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    transform: translateX(110%);
+    transition: all .5s ease-in-out;
+}
+
+.mensaje-container.aparecer{
+    transform: translateX(0);
+}
+
+
+
+/******************************************************************************
+ ESTILOS DE BOTONES GENERALES
+******************************************************************************/
+
+.btn{
+    box-shadow: 0px 2px 3px rgba(0,0,0, .3);
+    border-radius: 3px;
+    background: var(--color_secundario);
+}
+
+.btn:hover{
+    box-shadow: none;
+    transition: .25s;
+}
+
+
+/******************************************************************************
+ ESTILOS DEL SLIDER
+******************************************************************************/
+
+.container-slider{
+    width: 80%;
+    margin: 25px auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 3px 3px 3px rgba(0,0,0, .2),
+                -3px -3px 3px rgba(0,0,0, .2);
+}
+
+.slider{
+    display: flex;
+    width: 1600%;
+    height: 25em;
+    margin-left: -100%;
+}
+
+.slider-item{
+    width: 100%;
+}
+
+.slider-item .slider-img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.slider-btn{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background: rgba(194, 193, 193, 0.192);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    font-family: monospace;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-btn:hover{
+    background: rgba(110, 110, 110, 0.295);
+}
+
+.slider-btn-left{
+    left: 10px;
+}
+
+.slider-btn-right{
+    right: 10px;
+}
+
+
+/******************************************************************************
+ ESTILOS DEL MAIN
+******************************************************************************/
 
 .main{
     width: 80%;
@@ -97,11 +359,16 @@
     margin: 10px;
     padding: 5px;
     border-radius: 3px;
-    border: 1px solid rgba(0,0,0, .2);
+    box-shadow: 2px 2px 10px rgba(0,0,0, .2),
+                -2px -2px 10px rgba(0,0,0, .2);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.card .img-card{
+    width: 140px;
 }
 
 .card .footer-card{
@@ -120,11 +387,54 @@
     border: none;
     outline: none;
     cursor:pointer;
-    box-shadow: 2px 2px 2px rgba(0,0,0, .2);
 }
 
 .card .price-card{
     font-size: 18px;
     margin-right: 5px;
     margin-bottom: 5px;
+}
+
+
+/******************************************************************************
+ ESTILOS DEL FOOTER
+******************************************************************************/
+
+.footer{
+    width: 100%;
+    height: 10em;
+    margin-top: 5em;
+    padding-top: 3em;
+    background: var(--color_principal);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .redes{
+    width: 30%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #000;
+    padding: 5px;
+    font-size: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.footer .footer-brand{
+    width: 100%;
+    height: 2em;
+    background: var(--color_secundario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
 }
