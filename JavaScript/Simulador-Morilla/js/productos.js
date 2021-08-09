@@ -37,9 +37,9 @@ class Productos
 function buscarXid(id)
 {
     let product = null;
-    for(let i = 0; i < arrayP.length; i++)
+    for(let i = 0; i < arrayProductos.length; i++)
     {
-        if(id == arrayP[i].id)
+        if(id == arrayProductos[i].id)
         {
             product = arrayP[i];
         }

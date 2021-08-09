@@ -45,13 +45,13 @@ function crearYcargarSlide()
 {
     let slider = document.querySelector(".slider");
 
-    for(let i = 0; i < arrayP.length; i++)
+    for(let i = 0; i < arrayProductos.length; i++)
     {
         let slide = document.createElement("div");
         slide.className = "slider-item";
 
-        arrayP[i].innerHTML =`<img src="`+ arrayP[i].img +`" alt="`+ arrayP[i].nombre +`" class="slider-img">`;    
-        slide.innerHTML = arrayP[i].innerHTML;
+        arrayProductos[i].innerHTML =`<img src="`+ arrayProductos[i].img +`" alt="`+ arrayProductos[i].nombre +`" class="slider-img">`;    
+        slide.innerHTML = arrayProductos[i].innerHTML;
         
         slider.appendChild(slide);
     }

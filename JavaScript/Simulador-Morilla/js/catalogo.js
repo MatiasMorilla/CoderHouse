@@ -17,14 +17,16 @@ const p14 = new Productos(14, "Yerbera Marron", 50, 800, "images/YerbaMarron.png
 const p15 = new Productos(15, "Yerbera Azul", 60, 800, "images/YerbaAzul.png", "yerbera y azucarera azul");
 const p16 = new Productos(16, "Set Matero Marro", 60, 5500, "images/setMatero1.png", "set matero marron");
 const p17 = new Productos(17, "Set Matero Negro", 60, 5500, "images/setMatero4.png", "set matero negra");
-const p18 = new Productos(18, "Set Matero Verde", 60, 5500, "images/setMatero3.png", "set matero verde");
-const arrayP = [p1, p2, p3, p4, p5, p6 , p7, p9, p11, p12, p13, p14, p15, p16, p17, p18];
+const p18 = new Productos(18, "Set Matero Verde", 60, 5500, "images/setMatero3.png", "set matero verde"); 
+
+const arrayProductos = [p1, p2, p3, p4, p5, p6 , p7, p9, p11, p12, p13, p14, p15, p16, p17, p18];
+
 
 
 function crearYagregarCards()
 {
     // Recorro el array de productos para agregarlos al DOM
-    for(let i = 0; i < arrayP.length; i++)
+    for(let i = 0; i < arrayProductos.length; i++)
     {
         // Creo el un elemento div para almacenar el producto
         let card = document.createElement("div");
@@ -32,14 +34,14 @@ function crearYagregarCards()
         card.innerHTML = "";
 
         // Le agrego ese HTML a la tarjeta y despues lo agrego al container
-        card.innerHTML = arrayP[i].toHTML();
+        card.innerHTML = arrayProductos[i].toHTML();
         container.appendChild(card);
     }
 }
 
 function crearYagregarCards1(nombre)
 {
-    let arrayAmostar = arrayP.filter(element => element.info.includes(nombre.toLowerCase()));
+    let arrayAmostar = arrayProductos.filter(element => element.info.includes(nombre.toLowerCase()));
     container.innerHTML = "";
     for(let i = 0; i < arrayAmostar.length; i++)
     {
