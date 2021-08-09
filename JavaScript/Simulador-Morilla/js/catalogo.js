@@ -28,14 +28,17 @@ function crearYagregarCards()
     // Recorro el array de productos para agregarlos al DOM
     for(let i = 0; i < arrayProductos.length; i++)
     {
-        // Creo el un elemento div para almacenar el producto
-        let card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = "";
+        if(arrayProductos[i].stock > 0)
+        {
+            // Creo el un elemento div para almacenar el producto
+            let card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML = "";
 
-        // Le agrego ese HTML a la tarjeta y despues lo agrego al container
-        card.innerHTML = arrayProductos[i].toHTML();
-        container.appendChild(card);
+            // Le agrego ese HTML a la tarjeta y despues lo agrego al container
+            card.innerHTML = arrayProductos[i].toHTML();
+            container.appendChild(card);
+        }
     }
 }
 

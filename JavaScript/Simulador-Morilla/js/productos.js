@@ -41,7 +41,7 @@ function buscarXid(id)
     {
         if(id == arrayProductos[i].id)
         {
-            product = arrayP[i];
+            product = arrayProductos[i];
         }
     }
     return product;
