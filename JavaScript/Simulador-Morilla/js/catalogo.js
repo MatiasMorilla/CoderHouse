@@ -1,6 +1,5 @@
-const container = document.getElementById('p');
+const container = $(".products-container");
 const search = document.querySelector(".search");
-const btn_search = document.querySelector(".btn-search");
 
 const p1 = new Productos(1, "Imperial", 50, 5000, "images/mateImperial.png", "mate imperial negro");
 const p2 = new Productos(2, "Camionero", 80, 1000, "images/camioneroMarron.png", "mate camionero marron");
@@ -15,7 +14,7 @@ const p12 = new Productos(12, "Termo Gris con Pico", 50, 2200, "images/termoPico
 const p13 = new Productos(13, "Yerbera Negra", 40, 800, "images/yerbaNegra.png", "yerbera y azucarera negra");
 const p14 = new Productos(14, "Yerbera Marron", 50, 800, "images/YerbaMarron.png", "yerbera y azucarera marron");
 const p15 = new Productos(15, "Yerbera Azul", 60, 800, "images/YerbaAzul.png", "yerbera y azucarera azul");
-const p16 = new Productos(16, "Set Matero Marro", 60, 5500, "images/setMatero1.png", "set matero marron");
+const p16 = new Productos(16, "Set Matero Marron", 60, 5500, "images/setMatero1.png", "set matero marron");
 const p17 = new Productos(17, "Set Matero Negro", 60, 5500, "images/setMatero4.png", "set matero negra");
 const p18 = new Productos(18, "Set Matero Verde", 60, 5500, "images/setMatero3.png", "set matero verde"); 
 
@@ -30,14 +29,7 @@ function crearYagregarCards()
     {
         if(arrayProductos[i].stock > 0)
         {
-            // Creo el un elemento div para almacenar el producto
-            let card = document.createElement("div");
-            card.className = "card";
-            card.innerHTML = "";
-
-            // Le agrego ese HTML a la tarjeta y despues lo agrego al container
-            card.innerHTML = arrayProductos[i].toHTML();
-            container.appendChild(card);
+            container.append(arrayProductos[i].toHTML());
         }
     }
 }
@@ -45,22 +37,15 @@ function crearYagregarCards()
 function crearYagregarCards1(nombre)
 {
     let arrayAmostar = arrayProductos.filter(element => element.info.includes(nombre.toLowerCase()));
-    container.innerHTML = "";
+    container.html("");
     for(let i = 0; i < arrayAmostar.length; i++)
     {
-        // Creo el un elemento div para almacenar el producto
-        let card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = "";
-
-        // Le agrego ese HTML a la tarjeta y despues lo agrego al container
-        card.innerHTML = arrayAmostar[i].toHTML();
-        container.appendChild(card);
+       $(".products-container").append(arrayAmostar[i].toHTML());
     }
 
     if(arrayAmostar.length == 0)
     {
-        container.innerHTML = `<h3>No se encontro nada para: `+ '"' + nombre + '"' +`</h3>`
+        container.html(`<h3>No se encontro nada para: `+ '"' + nombre + '"' +`</h3>`);
     }
 
 }
@@ -74,8 +59,9 @@ function crearYagregarCards1(nombre)
     }
 }) */
 
-btn_search.addEventListener("click", function(){
-    let search = document.querySelector(".search").value;
-    crearYagregarCards1(search);
-})
 
+$(".btn-search").click(function()
+{
+    let texto = $(".search").val();
+    crearYagregarCards1(texto);
+})
