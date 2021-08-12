@@ -13,7 +13,6 @@ body{
 }
 
 .contenedor{
-    width: 500px;
     box-shadow: 5px 5px 5px rgba(0,0,0, .5),
                 -2px -2px 5px rgba(0,0,0, .2);
     padding: 20px;
@@ -30,4 +29,5 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 5px;
 }
