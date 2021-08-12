@@ -23,11 +23,13 @@ class Productos
     toHTML()
     {
         this.innerHTML =
-        `<h3 class="title">`+ this.nombre +`</h3>
-        <img src="`+ this.img +`" alt="Imagen Mate" class="img-card">
-        <div class="footer-card">
-            <button class="btn btn-card" idProducto="`+ this.id +`" >Agregar</button>
-            <span class="price-card">$`+ this.precio +`</span>
+        `<div class="card">
+            <h3 class="title">`+ this.nombre +`</h3>
+            <img src="`+ this.img +`" alt="Imagen Mate" class="img-card">
+            <div class="footer-card">
+                <button class="btn btn-card" idProducto="`+ this.id +`" >Agregar</button>
+                <span class="price-card">$`+ this.precio +`</span>
+            </div>
         </div>`;
 
         return this.innerHTML;

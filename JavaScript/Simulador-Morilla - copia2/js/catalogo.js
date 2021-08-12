@@ -1,4 +1,4 @@
-const container = document.getElementById('p');
+const container = $("#p");
 const search = document.querySelector(".search");
 const btn_search = document.querySelector(".btn-search");
 
@@ -26,16 +26,9 @@ function crearYagregarCards()
     // Recorro el array de productos para agregarlos al DOM
     for(let i = 0; i < arrayP.length; i++)
     {
-        // Creo el un elemento div para almacenar el producto
-        let card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = "";
-
-        // Le agrego ese HTML a la tarjeta y despues lo agrego al container
-        card.innerHTML = arrayP[i].toHTML();
-        container.appendChild(card);
+        container.append(arrayP[i].toHTML());
     }
-}
+} 
 
 function crearYagregarCards1(nombre)
 {
