@@ -190,9 +190,8 @@ SOBRE MI
     width: 70%;
 }
 
-.tecnologias{
-    padding: 0.625rem;
-    display: flex;
+div.tecnologias{
+    margin-top: 30px;
 }
 
 .tecnologias__info{
@@ -215,13 +214,12 @@ SOBRE MI
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6, 1fr);
-    gap: 5px;
-    padding: 5px;
+    gap: 2px;
+    padding: 2px;
     border: 1px solid #000;
 }
 
 .tecnologias__lenguajes span{
-    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
