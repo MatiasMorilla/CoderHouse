@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;400&display=swap');
 /* VARIABLES */
 :root{
-    --color_principal : rgba(189, 156, 84, 0.514);
-    --color_secundario : rgba(204, 177, 119, 0.514);
+    --color_principal : rgb(235, 235, 235);
+    --color_secundario : rgb(219, 219, 219);
 }
 
 /******************************************************************************
@@ -406,10 +406,9 @@ body{
 
 .footer{
     width: 100%;
-    height: 10em;
+    height: 5em;
     margin-top: 5em;
-    padding-top: 3em;
-    background: var(--color_principal);
+    background: linear-gradient(to bottom, #f0f0f0, #dddada);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -418,7 +417,6 @@ body{
 
 .footer .redes{
     width: 30%;
-    height: 20%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -436,7 +434,6 @@ body{
 .footer .footer-brand{
     width: 100%;
     height: 2em;
-    background: var(--color_secundario);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -459,7 +456,7 @@ body{
     background: rgba(0,0,0, .6);
 }
 
-.form-buy{
+#form-buy{
     position: relative;
     top: 25%;
     left: 50%;
@@ -467,6 +464,7 @@ body{
     background: #fff;
     width: 600px;
     padding: 15px;
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -533,4 +531,10 @@ body{
 
 .btn-cancelar-compra:active{
     transform: scale(.9);
+}
+
+form .error {
+    
+    font-size: 14px;
+    color: #ff0000;
 }

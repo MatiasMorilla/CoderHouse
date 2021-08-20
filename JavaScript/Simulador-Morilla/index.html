@@ -67,7 +67,7 @@
 
     <!-- PASARELA DE PAGO -->
     <section class="section-buy">
-        <form action="" class="form-buy">
+        <form action="" method="POST" id="form-buy">
             <button type="button" class="btn-cancelar-compra"><i class="fas fa-times-circle"></i></button>
             <div class="input-box">
                 <label for="nombre">Nombre</label>
@@ -91,8 +91,8 @@
     
             <div class="tarjeta-container">
                 <div class="input-box">
-                    <label for="numero">Numero de la tarjeta</label>
-                    <input type="text" name="numero" placeholder="Ingrese el numero de la tarjeta">
+                    <label for="numeroTarjeta">Numero de la tarjeta</label>
+                    <input type="text" name="numeroTarjeta" placeholder="Ingrese el numero de la tarjeta">
                 </div>
     
                 <div class="input-box">
@@ -132,7 +132,9 @@
     </footer>
 
     <!-- Script JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Script de Validacion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
     <!-- Script Productos -->
     <script src="js/productos.js"></script>
     <!-- Script Catalogo -->
