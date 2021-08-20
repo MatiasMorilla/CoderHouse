@@ -13,7 +13,7 @@
 <body>
     
     <!-- HEADER -->
-    <header class="header">
+    <header class="header" id="header">
         <nav class="nav">
             <div class="brand">
                 <!-- <img src="" alt="Imagen del logo"> -->
@@ -38,7 +38,7 @@
             
             <div class="buy-container">
                 <span class="total-price">Total:</span>
-                <a href="pages/form-buy.html" class="btn btn-buy">Comprar</a>
+                <button class="btn btn-buy">Comprar</button>
             </div>
         </div>
     </header>
@@ -64,6 +64,59 @@
 
         </div>
     </main>  
+
+    <!-- PASARELA DE PAGO -->
+    <section class="section-buy">
+        <form action="" class="form-buy">
+            <button type="button" class="btn-cancelar-compra"><i class="fas fa-times-circle"></i></button>
+            <div class="input-box">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" placeholder="Ingrese su nombre">
+            </div>
+    
+            <div class="input-box">
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" placeholder="Ingrese su apellido">
+            </div>
+    
+            <div class="input-box">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Ingrese su email">
+            </div>
+    
+            <div class="input-box">
+                <label for="direccion">Direccion</label>
+                <input type="text" name="direccion" placeholder="Ingrese su direccion">
+            </div>
+    
+            <div class="tarjeta-container">
+                <div class="input-box">
+                    <label for="numero">Numero de la tarjeta</label>
+                    <input type="text" name="numero" placeholder="Ingrese el numero de la tarjeta">
+                </div>
+    
+                <div class="input-box">
+                    <label for="nombreTitular">Nombre del titular</label>
+                    <input type="text" name="nombreTitular" placeholder="Ingrese el nombre del titular">
+                </div>
+    
+                <div class="input-box">
+                    <label for="fecha">Fecha de vencimiento</label>
+                    <input type="date" name="fecha">
+                </div>
+    
+                <div class="input-box">
+                    <label for="codigo">CVV</label>
+                    <input type="text" name="codigo" placeholder="Ingrese el CVV">
+                </div>
+            </div>
+
+            <div class="footer-sectionBuy">
+                <span class="total-compra">Total:</span>
+                <input type="submit" value="Finalizar Compra" class="btn btn-comprar">
+            </div>
+        </form>
+    </section>
    
     <!-- Footer -->
     <footer class="footer">

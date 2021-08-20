@@ -138,7 +138,6 @@ btn_card.forEach(function(e)
         let cart_items = document.querySelectorAll(".product");
         let btn_cart = document.querySelector("#btn-cart");
         
-        // AGREGA LOS PRODUCTOS Y SI QUIEREA AGREAGAR MAS DE 7 NO LO DEJA
         let p = buscarXid(e.getAttribute("idProducto"));
         cart.agregar(p);
         cartToHTML(cart);
