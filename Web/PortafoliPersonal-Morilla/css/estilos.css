@@ -14,6 +14,9 @@ body {
 .first-letter {
   color: #5c80ca; }
 
+a {
+  color: #000; }
+
 /**************************************************************
  HEADER
 **************************************************************/
@@ -56,17 +59,17 @@ body {
   transition: color .3s ease; }
 
 .nav__menu__item a:hover {
-  color: #5c80ca; }
+  color: #ffffff; }
 
 /**************************************************************
  MAIN
 **************************************************************/
-#particles-js{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0px;
-    z-index: -1;}
+#particles-js {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  z-index: -1; }
 
 .main-container {
   width: 100%;
@@ -76,25 +79,29 @@ body {
   justify-content: center;
   align-items: center;
   position: relative; }
-  .main-container h1 {
-    font-size: 45px;
-    font-weight: 400;
-    z-index: 99; }
-  .main-container h2 {
-    font-size: 25px;
-    font-weight: 400;
-    z-index: 99; }
+
+.main-container h1 {
+  font-size: 45px;
+  font-weight: 400;
+  z-index: 99; }
+
+.main-container h2 {
+  font-size: 25px;
+  font-weight: 400;
+  z-index: 99; }
 
 /**************************************************************
  FOOTER
 **************************************************************/
 .footer {
   width: 100%;
-  height: 6vh;
+  height: 8vh;
   background: #5c80ca;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  padding: 5px; }
 
 .footer__redes {
   width: 40%;
@@ -102,24 +109,33 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center; }
-  .footer__redes a {
-    color: #fff;
-    font-size: 25px;
-    padding: 15px; }
-  .footer__redes a:hover {
-    color: #5c80ca;
-    transition: .3s ease-in; }
+
+.footer__redes a {
+  color: #000;
+  font-size: 25px;
+  padding: 15px; }
+
+.footer__redes a:hover {
+  color: #fff;
+  transition: .3s ease-in; }
+
+.footer__nombre {
+  font-size: 25px; }
+  .footer__nombre .first-letter {
+    color: rgba(255, 255, 255, 0.856); }
 
 /**************************************************************
 SECTION
 **************************************************************/
 section {
-  margin: 100px 0; }
-  section .section__titulo {
-    text-align: center;
-    font-size: 70px;
-    font-weight: 100;
-    margin: 20px 0; }
+  margin: 100px 0;
+  padding-top: 50px; }
+
+section .section__titulo {
+  text-align: center;
+  font-size: 70px;
+  font-weight: 100;
+  margin: 20px 0; }
 
 /**************************************************************
 SOBRE MI
@@ -148,14 +164,17 @@ SOBRE MI
   display: flex;
   flex-direction: column;
   transform: translateX(5%); }
-  .sobreMi__info h2 {
-    font-size: 60px;
-    font-weight: 100; }
-  .sobreMi__info h4 {
-    margin: 10px 0;
-    font-size: 18px; }
-  .sobreMi__info p {
-    width: 70%; }
+
+.sobreMi__info h2 {
+  font-size: 60px;
+  font-weight: 100; }
+
+.sobreMi__info h4 {
+  margin: 10px 0;
+  font-size: 18px; }
+
+.sobreMi__info p {
+  width: 70%; }
 
 .tecnologias {
   padding: 0.625rem;
@@ -166,10 +185,12 @@ SOBRE MI
   padding: 0.625rem;
   display: flex;
   flex-direction: column; }
-  .tecnologias__info p {
-    width: 80%; }
-  .tecnologias__info .sobreMi__info p {
-    margin-top: 15px; }
+
+.tecnologias__info p {
+  width: 80%; }
+
+.tecnologias__info .sobreMi__info p {
+  margin-top: 15px; }
 
 .tecnologias__lenguajes {
   display: grid;
@@ -178,12 +199,13 @@ SOBRE MI
   gap: 5px;
   padding: 5px;
   border: 1px solid #000; }
-  .tecnologias__lenguajes span {
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #000; }
+
+.tecnologias__lenguajes span {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000; }
 
 /**************************************************************
 PROYECTOS
