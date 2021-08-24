@@ -4,6 +4,7 @@ section_buy.css("display", "none");
 $(".btn-cancelar-compra").click(function()
 {
     section_buy.css("display", "none");
+    $("html, body").css("overflow", "inherit");
 });
 
 $(".btn-buy").click(function()
@@ -15,7 +16,9 @@ $(".btn-buy").click(function()
         $("html, body").animate(
         {
             scrollTop: $("#header")
-        });
+        }),
+
+        $("html, body").css("overflow", "hidden");
 
         $(".total-compra").html(`Total: $${cart.calcularTotal()}`);
     } 

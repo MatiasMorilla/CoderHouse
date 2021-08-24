@@ -67,11 +67,6 @@ body{
     align-items: center;
 }
 
-.search input[type="reset"]
-{
-    background: #000;
-}
-
 .form-search .search{
     width: 80%;
     height: 2.5em;
