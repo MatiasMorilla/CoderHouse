@@ -533,3 +533,35 @@ form .error {
     font-size: 14px;
     color: #ff0000;
 }
+
+@media screen and (max-width: 770px) {
+    
+    /******************************************************************************
+    NAV
+    ******************************************************************************/
+    .brand{
+        width: 4em;
+        height: 2em;
+    }
+
+    .form-search{
+        width: 30em;
+        height: 4em;
+    }
+
+    .form-search .search{
+        width: 70%;
+        height: 2.5em;
+    }
+
+    .form-search .btn-search{
+        width: 4em;
+        height: 2em;
+    }
+
+    .cart-container{
+        width: 4em;
+        height: 2em;
+    }
+
+}

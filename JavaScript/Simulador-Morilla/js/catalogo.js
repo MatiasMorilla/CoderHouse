@@ -45,23 +45,30 @@ function crearYagregarCards1(nombre)
 
     if(arrayAmostar.length == 0)
     {
-        container.html(`<h3>No se encontro nada para: `+ '"' + nombre + '"' +`</h3>`);
+        container.html(`<h3>No se encontro nada para: "${nombre}" </h3>`);
     }
 
 }
 
-/* search.addEventListener("keypress", function(e)
+search.addEventListener("keypress", function(e)
 {
     let search = document.querySelector(".search").value;
     if(e.code == 13)
     {
         crearYagregarCards1(search);
     }
-}) */
+})
+
+$("#form-search").submit(function(event)
+{
+    event.preventDefault();
+    let textoIngresado = $(".search").val();
+    crearYagregarCards1(textoIngresado);
+});
 
 
 $(".btn-search").click(function()
 {
-    let texto = $(".search").val();
-    crearYagregarCards1(texto);
+    let textoIngresado = $(".search").val();
+    crearYagregarCards1(textoIngresado);
 })

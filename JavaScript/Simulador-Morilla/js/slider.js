@@ -41,6 +41,7 @@ function prev()
     }, 500);
 }
 
+
 function crearYcargarSlide()
 {
     let slider = document.querySelector(".slider");

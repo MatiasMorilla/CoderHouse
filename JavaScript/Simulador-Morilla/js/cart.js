@@ -80,20 +80,19 @@ class Cart
             div.className = "product"
             div.innerHTML =
             `<div class="img-product">
-            <img src="`+ this.productos[i].img +`" alt="`+ this.productos[i].nombre +`">
+                <img src="`+ this.productos[i].img +`" alt="`+ this.productos[i].nombre +`">
             </div>
             <div class="info-product">
-            <h4 class="name">`+ this.productos[i].nombre +`</h4>
-            <span class="price">$`+ this.productos[i].precio +`</span>
+                <h4 class="name">`+ this.productos[i].nombre +`</h4>
+                <span class="price">$`+ this.productos[i].precio +`</span>
             </div>
             <div class="cant-product">
-            <span class="cant">`+ this.cantidad[i] +`</span>
+                <span class="cant">`+ this.cantidad[i] +`</span>
             </div>
             <div class="cancel-container">
-            <button class="btn-cancel" idProducto="`+ this.productos[i].id +`"><i class="far fa-times-circle"></i></button>
+                <button class="btn-cancel" idProducto="`+ this.productos[i].id +`"><i class="far fa-times-circle"></i></button>
             </div>`
 
-            const id = this.productos[i].id;
             div.querySelector(".btn-cancel").addEventListener("click", addDeleteEvent)
 
             divArray.push(div);
@@ -106,12 +105,12 @@ class Cart
 
 const cart = new Cart();
 
-const btn_cart = document.querySelector("#btn-cart");
-const cart_container = document.querySelector(".cart-container-product");
-const carrito = document.querySelector(".cart");
-const cart_items = document.querySelectorAll(".product");
-const card = document.querySelectorAll(".card");
-const btn_card = document.querySelectorAll(".btn-card");
+const btn_cart = document.querySelector("#btn-cart"); // Obtenemos el boton para abrir el carrito
+const cart_container = document.querySelector(".cart-container-product"); // Obtenemos el container del carrito
+const carrito = document.querySelector(".cart"); // Obtenemos el carrito donde se agregan los productos
+const cart_items = document.querySelectorAll(".product"); // Obtenemos los productos del carrito
+const card = document.querySelectorAll(".card"); // Obtenemos las tarjetas de los productos (La del catalogo)
+const btn_card = document.querySelectorAll(".btn-card"); // Obtenemos todos los botones de las tarjetas
 
 
 const cartToHTML = function(cart)
