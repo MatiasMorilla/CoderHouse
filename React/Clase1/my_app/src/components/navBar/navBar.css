@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+header.NavBar{
+    height: 70px;
+    background: #fff;
+}
+
+.Toolbar{
+    justify-content: space-between;
+    height: 100%;
+    color: #000;
+}
+
+.search-container{
+    width: 30em;
+    padding: 0px 5px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+.search-container .search-icon{
+    font-size: 1.8em;
+}
+
+.search-container .search-input{
+    width: 100%;
+    padding-left: 10px;
+}
+
+.Toolbar__menu{
+    display: flex;
+}
+
+.Toolbar__menu__item__iconBtn .iconBtn__icon{
+    font-size: 1.4em;
+    color: #000;
+}
